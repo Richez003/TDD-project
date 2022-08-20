@@ -30,7 +30,7 @@ describe Solver do
   end
 
   context 'The method fizzbuzz(n) should return a string based on some rules' do
-    it "returns 'fizz' when n is divisible by 3" do
+    it "returns 'fizz' when n divisible by 3" do
       result = @solver.fizzbuzz(9)
       expected_result = 'fizz'
       expect(result).to eql(expected_result)
