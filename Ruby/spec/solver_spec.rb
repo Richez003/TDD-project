@@ -2,7 +2,7 @@ require_relative '../solver'
 
 describe 'Solver' do
   context 'The method factorial(n) should return the factorial of n' do
-    before (:each) do
+    before(:each) do
       @solver = Solver.new
     end
     it 'throws error when n is less than 0' do
@@ -21,6 +21,7 @@ describe 'Solver' do
   end
 
   context 'The method reverse(string) should return a reverse for a given string' do
+
     it "return the reverse of 'hello' string" do
       result = @solver.reverse('hello')
       expected_result = 'olleh'
@@ -34,16 +35,19 @@ describe 'Solver' do
       expected_result = 'fizz'
       expect(result).to eql(expected_result)
     end
+
     it "returns 'fizz' when n is divisible by 5" do
       result = @solver.fizzbuzz(5)
       expected_result = 'buzz'
       expect(result).to eql(expected_result)
     end
+
     it "returns 'fizzbuzz' when n is divisible by 3 and 5" do
       result = @solver.fizzbuzz(30)
       expected_result = 'fizzbuzz'
       expect(result).to eql(expected_result)
     end
+
     it 'returns the number when n is not divisible by 3 or 5' do
       result = @solver.fizzbuzz(7)
       expected_result = '7'
