@@ -1,15 +1,14 @@
 require_relative '../solver'
 
-describe Solver do
-  before :each do
-    @solver = Solver.new
-  end
-
+describe 'Solver' do
   context 'The method factorial(n) should return the factorial of n' do
-    it 'thorws error when n is less than 0' do
+    before (:each) do
+      @solver = Solver.new
+    end
+    it 'throws error when n is less than 0' do
       expect { @solver.factorial(-1) }.to raise_error('ArgumentError')
     end
-    it 'return the right factorial value for n=0' do
+    it 'return 1 for n = 0' do
       result = @solver.factorial(0)
       expected_result = 1
       expect(result).to eql(expected_result)
