@@ -1,18 +1,20 @@
 require_relative '../solver'
 
 describe 'Solver' do
+  before(:each) do
+    @solver = Solver.new
+  end
   context 'The method factorial(n) should return the factorial of n' do
-    before(:each) do
-      @solver = Solver.new
-    end
     it 'throws error when n is less than 0' do
       expect { @solver.factorial(-1) }.to raise_error('ArgumentError')
     end
+
     it 'return 1 for n = 0' do
       result = @solver.factorial(0)
       expected_result = 1
       expect(result).to eql(expected_result)
     end
+
     it 'return the right factorial value for n=3' do
       result = @solver.factorial(3)
       expected_result = 6
@@ -21,7 +23,6 @@ describe 'Solver' do
   end
 
   context 'The method reverse(string) should return a reverse for a given string' do
-
     it "return the reverse of 'hello' string" do
       result = @solver.reverse('hello')
       expected_result = 'olleh'
